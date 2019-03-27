@@ -1,0 +1,25 @@
+网站名称：多米小说  (文章类网站)
+前台页面：index首页、share分类页、xqList分类列表页、info详情页
+
+点击导航进入对应栏目列表，点击文章进入文章详情，
+点击文章列表进入文章分类，点击友情链接跳转对应的网站
+
+index功能：分类导航栏、热门推荐、友情链接、分类列表
+share功能：分类导航栏、分类列表、热门推荐
+xqList功能：分类列表详情、热门推荐
+info功能：文章详情
+
+后台登录用户admin 密码123 
+点击验证码图片刷新验证码 
+注：登录后首页左上角三明治图标是导航栏
+
+后台页面：admin后台首页、login登录页面
+		item栏目分类(itemAdd、itemEdit、itemList)
+		article文章分类(articleAdd、articleEdit、articleList、articleImageUpdate文章图片修改)
+		admin管理员(adminadd、adminEdit、adminList)
+		link友情链接(itemAdd、itemEdit、itemList)
+管理员功能(增、删、改、查 、注：只能更改当前登录用户信息，判断密码，验证码)
+登录功能（判断用户名、密码、验证码  注：登录成功后首页当前用户头像点击出现下拉框可退出登录）
+栏目功能（增、删、改、查 注：判断有文章的栏目不能删除）
+文章功能（增、删、改、查、分页、推荐文章、点击列表头像更换图片、联合查询所属栏目）
+链接功能（增、删、改、查）

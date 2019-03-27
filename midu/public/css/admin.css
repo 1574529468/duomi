@@ -1,0 +1,43 @@
+/* 管理员样式 */
+.input-group{
+    outline: none;
+}
+
+/* 修改路径导航 */
+.breadcrumb .mynav {color:#09c;}
+ .title{font-size: 24px;text-align: center;line-height: 60px;}
+/* 添加栏目 */
+.itemAdd{width:80%;margin: 30px auto;}
+
+.itemAdd .input-group{margin-top: 20px;  outline: none;}
+.itemAdd .submit{
+    margin:20px auto;
+}
+footer{
+    margin-top:50px;
+}
+footer>p{
+    text-align:center;
+}
+/* 数据列表 */
+.datalist{width:100%;margin: 20px auto; font-size: 12px;}
+.datalist table thead{background: #09c;color: #fff;font-size: 18px;}
+.datalist table tr td {text-align: center;height: 26px;}
+/* 发布文章 */
+.articleAdd{width:96%;margin: 10px auto;}
+.articleAdd .input-group{margin-top: 15px;  outline: none;}
+.articleAdd .content{width:100%; margin: 15px auto;}
+.articleAdd .btn{display: block;margin: 0 auto;}
+/* 文章列表 */
+.articleList {width:90%;margin: 20px auto;}
+.articleList table thead{background: #09c;color: #fff;font-size: 18px;}
+.articleList table tr td {text-align: center;height: 26px;}
+.articleList table tr img{width:100px;height: 100px;}
+
+/* 登录 */
+.login{
+    width:50%;
+   margin:100px auto;
+}
+.login .input-group{margin-top:20px;  outline: none;}
+

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多米小说</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/base.css" rel="stylesheet">
+<link href="/css/index.css" rel="stylesheet">
+<link href="/css/m.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+<script>
+window.onload = function ()
+{
+	var oH2 = document.getElementsByTagName("h2")[0];
+	var oUl = document.getElementsByTagName("ul")[0];
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="tophead">
+    <div class="logo"><a href="/">多米</a></div>
+   <!-- 导航部分 -->
+   <nav class="topnav" id="topnav">
+		<ul>
+                <% items.forEach(function(item){ %>
+                    <li><a href="/xqList/<%=item._id%>"><%=item.name%></a></li>
+                  <% }) %>
+		</ul>
+	  </nav>
+	</div>
+	</header>
+    
+<article>
+  <h1 class="t_nav"><a href="/" class="n1">首页</a><a href="/share" class="n2"><%=xqdata.name%></a></h1>
+  <div class="picbox">
+       
+    <ul style="width:96%;">
+            
+        <h1 style="margin-left:20px;"></h1>
+      <li><a href="/"><i></i>
+        <div class="picinfo">
+            <% xqList.forEach(function(xqList){ %>
+          <h3 style="text-overflow: ellipsis;  overflow: hidden; "><a href="/info/<%=xqList._id%>" target="_black"><%=xqList.title%>-------<%=xqList.author%></a></h3>
+          <%})%>
+        </a></li> 
+      
+    </ul>
+   
+    <div class="blank"></div>
+   
+  </div>
+  <div class="sidebar">
+   <div class="search">
+      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="" style="color: rgb(153, 153, 153);" onfocus="if(value==''){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='������ؼ���'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    
+    <div class="paihang">
+      <h2 class="hometitle">热门推荐</h2>
+      <ul>
+        
+            <% datal.forEach(function(tuijian){ %>
+                <li>
+                  <p><i><img src="/<%=tuijian.imgurl%>"></i>
+                    <b><a href="/info/<%=tuijian._id%>" target=""><%=tuijian.title%></a></b>
+                    <%=tuijian.author%></p>        
+                </li>
+                <% }) %>
+      
+      </ul>
+    </div>
+   
+  </div>
+</article>
+<footer>
+  <p>Design by <a href="/">Copyright Statement: Adaptation by Guo Yuxue on March 23, 2019</a></p>
+</footer>
+<script src="js/nav.js"></script>
+</body>
+</html>

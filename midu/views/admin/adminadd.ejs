@@ -1,0 +1,52 @@
+<%include header%>
+<!-- 导航 -->
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">系统管理</a></li>
+    <li class="active">添加管理员</li>
+</ul>
+<!-- 导航end -->
+<div class="itemAdd">
+    <div class="title">添加管理员</div>
+    <form action="/admin/adminInsert" method="post" enctype="multipart/form-data">
+      <div class="input-group">
+        <span class="input-group-addon">登录账号</span>
+        <input type="text" class="form-control" name="name">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">登录密码</span>
+        <input type="password" class="form-control" name="password">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">确认密码</span>
+        <input type="password" class="form-control" name="respassword">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">简 &nbsp; &nbsp; &nbsp; &nbsp; 介</span>
+        <input type="text" class="form-control" name="info">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">用户头像</span>
+        <input type="file" class="form-control" name="imgurl">
+      </div>     
+
+      <div class="input-group">
+        <span class="input-group-addon">验&nbsp; 证&nbsp; 码</span>
+        <input type="text" class="form-control mycode" name="code" style="height:44px;">
+        <span class="input-group-addon">
+            <img  src="/admin/code" alt="" onclick="javascript:this.src=this.src+'?time='+Math.random();">
+        </span>
+      </div> 
+
+      <div style="margin-top:20px;">
+        <input type="submit" class="btn btn-success" value="提交">
+      </div>
+
+    </form> 
+
+	</div>
+<%include footer%>

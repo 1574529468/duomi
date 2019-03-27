@@ -1,0 +1,36 @@
+<%include header%>
+<!-- 导航 -->
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">栏目管理</a></li>
+    <li class="active">添加栏目</li>
+</ul>
+<!-- 导航end -->
+<div class="itemAdd">
+    <div class="title">编辑栏目</div>
+    <form action="/admin/itemUpdate" method="post">
+        <input type="hidden" name="_id" value="<%=datas._id%>">
+      <div class="input-group">
+        <span class="input-group-addon">栏目名称</span>
+        <input type="text" class="form-control" name="name" value="<%=datas.name%>">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">栏目描述</span>
+        <input type="text" class="form-control" name="info" value="<%=datas.info%>">
+      </div>
+
+      <div class="input-group">
+          <span class="input-group-addon">栏目排序</span>
+          <input type="text" class="form-control" name="order" value="<%=datas.order%>">
+        </div>
+
+      <div class="input-group submit">
+        <input type="submit" value="提交">
+      </div>
+
+    </form> 
+
+	</div>
+
+<%include footer%>

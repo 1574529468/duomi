@@ -1,0 +1,93 @@
+<%include header%>
+<!-- 导航 -->
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">文章管理</a></li>
+    <li class="active">发布文章</li>
+</ul>
+<!-- 导航end -->
+<div class="itemAdd">
+    <div class="title">发布文章</div>
+  <div class="row">
+    <form action="/admin/articleInsert" method="post" enctype="multipart/form-data">
+      
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">标题</span>
+          <input type="text" class="form-control" name="title">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">作者</span>
+          <input type="text" class="form-control" name="author">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">栏目</span>
+          
+          <select class="form-control" name="itemId" >
+            <%item.forEach(function(item){%>
+            <option value="<%=item._id%>"><%=item.name%></option>
+            <%})%>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">封面</span>
+          <input type="file" class="form-control" name="imgurl" required>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <div class="radio">
+              <span class="input-group-addon">是否推荐文章</span>
+              <label>
+                <input type="radio" name="tuijian" value="0" checked>推荐
+              </label>
+              <label>
+                  <input type="radio" name="tuijian" value="1">不推荐
+                </label>
+            </div>  
+        </div>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">关键字</span>
+          <input type="text" class="form-control" name="keywords" >
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">描述</span>
+          <input type="text" class="form-control" name="description" >
+        </div>
+      </div>
+
+      <div class="col-md-12 content" style="margin-top:20px; position: relative; z-index: 1;">
+        <!-- 加载编辑器的容器 -->
+        <script id="content" name="content" type="text/plain"></script>
+      </div>
+
+      <div class="col-md-6 text-right" style="margin-top:20px;" >
+        <input type="reset" class="btn btn-info" value="重新输入" >
+      </div>
+      
+      <div class="col-md-6" style="margin-top:20px;">
+        <input type="submit" class="btn btn-success" value="发布文章">
+      </div>
+    </form> 
+  </div>
+	</div>
+
+  <!-- 引入富文本插件 -->
+  <script src="/ueditor/ueditor.config.js"></script>
+  <script src="/ueditor/ueditor.all.min.js"></script>
+  <script>
+  //实例化
+  var ue =UE.getEditor('content');
+  </script>
+<%include footer%>

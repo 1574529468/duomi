@@ -1,0 +1,34 @@
+<%include header%>
+<!-- 导航 -->
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">友情链接</a></li>
+    <li class="active">编辑链接</li>
+</ul>
+<!-- 导航end -->
+<div class="itemAdd">
+    <div class="title">编辑链接</div>
+  <div class="row">
+    <form action="/admin/linkUpdate" method="post" >
+      <input type="hidden" name="_id" value="<%=datas._id%>">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">友情名称</span>
+          <input type="text" class="form-control" name="name" value="<%=datas.name%>">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">友情地址</span>
+          <input type="text" class="form-control" name="yurl" value="<%=datas.yurl%>">
+        </div>
+      </div>
+
+      <div class="col-md-6" style="margin-top:20px;">
+        <input type="submit" class="btn btn-success" value="保存文章">
+      </div>
+    </form> 
+  </div>
+	</div>
+<%include footer%>

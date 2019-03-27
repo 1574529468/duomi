@@ -1,0 +1,35 @@
+<%include header%>
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">系统管理</a></li>
+    <li class="active">管理员列表</li>
+</ul>
+
+<div class="adminList">
+    <div class="title">管理员列表</div>
+    <table class="table"  style="text-align: center;">
+        <thead>
+            <tr>
+                <td>头像</td>
+                <td>账号</td>
+                <td>密码</td>
+                <td>创建时间</td>
+                <td>简介</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <%datas.forEach(function(item){%>
+            <tr>
+                <td><img src="/<%=item.imgurl%>" alt="" width="50" height="50"></td>
+                <td><%=item.name%></td>
+                <td><%=item.password%></td>
+                <td><%=item.ctime.toLocaleString()%></td>
+                <td><%=item.info%></td>
+                <td>
+                <a href="/admin/adminRemove/<%=item._id%>" onclick="return confirm('您确定要删除吗？')">删除</a>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+</div>
+<%include footer%>

@@ -1,0 +1,24 @@
+<%include header%>
+<!-- 导航 -->
+<ul class="breadcrumb">
+        <li><a href="/admin/index">米读后台</a></li>
+        <li><a href="#">文章管理</a></li>
+        <li class="active">更改图片</li>
+    </ul>
+    <!-- 导航end -->
+    <div class="articleimgEdit">
+    <div class="title">编辑封面</div>
+	    <div class="row">
+	    	<div class="col-md-4">
+	    		<img src="/<%=datas.imgurl%>" alt="" width="337" height="300">
+	    	</div>
+	    	<div class="col-md-8" style="margin-top:50px">
+	    		<form action="/admin/articleImageUpdate" method="post"  enctype="multipart/form-data">
+	    			<input type="hidden" name="_id" value="<%=datas._id%>" >
+	    			<input type="file" name="imgurl">
+	    			<input type="submit" value="修改封面" style="margin-top:20px">
+	    		</form>
+	    	</div>
+        </div>
+    </div>
+<%include footer%>

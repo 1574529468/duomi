@@ -1,0 +1,75 @@
+<%include header%>
+
+<div class="picshow">
+  <ul>
+      <% data.forEach(function(item){ %>    
+    <li><a href="/info/<%=item._id%>"><i><img src="/<%=item.imgurl%>" alt="" width="269" height="479"></a></i>
+      <div class="font">
+        <h3><%=item.title%></h3>
+      </div>
+      </li>
+      <% }) %>
+  </ul>
+</div>
+<article>
+  <div class="blogs">
+      <% items.forEach(function(item){ %>
+      <% item.articles.forEach(function(val){  %>
+    <li> <span class="blogpic"><a href="/info/<%=val._id%>"><img src="/<%=val.imgurl%>"  width="240" height="160"></a></span>
+      <h3 class="blogtitle"><a href="/info/<%=val._id%>"><%=val.title%></a></h3>
+      <div class="bloginfo">
+        <p><%=val.description%></p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">米读</a></span><span class="dtime"><%=item.ctime.toLocaleString()%></span><span class="viewnum"> <%=item.name%><a href="/"></a></span><span class="readmore"><a href="/">作者：<%=val.author %></a></span></div>
+    </li>
+    <% }) %>
+    <% }) %>
+
+  </div>
+  <div class="sidebar">
+    <div class="about">
+      <div class="avatar"> <img src="images/avatar.jpg" alt=""> </div>
+      <p class="abname"><a href="/admin" target="_blank" >后台首页</a>
+        | <a href="/share" target="_blank" >文章列表</a></p>
+     
+    </div>
+    <div class="search">
+      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="" style="color: rgb(153, 153, 153);" onfocus="if(value=='������ؼ���'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='������ؼ���'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="paihang">
+      <h2 class="hometitle">热门推荐</h2>
+      <ul>
+          <% datas.forEach(function(tuijian){ %>
+        <li>
+          <p><i><img src="/<%=tuijian.imgurl%>"></i>
+            <b><a href="/info/<%=tuijian._id%>" target=""><%=tuijian.title%></a></b>
+            <%=tuijian.author%></p>        
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+    
+    <div class="links">
+      <h2 class="hometitle">友情链接</h2>
+      <ul>
+          <% item.forEach(function(ite){ %>
+        <li><a href="<%=ite.yurl%>" title="友情链接"><%=ite.name%> |</a></li>
+       <%})%>
+      </ul>
+    </div>
+   
+  </div>
+</article>
+<div class="blank"></div>
+<footer>
+  <p>Design by <a href="/">Copyright Statement: Adaptation by Guo Yuxue on March 23, 2019</p>
+</footer>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<%include header%>
+<!-- 导航 -->
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">栏目管理</a></li>
+    <li class="active">添加栏目</li>
+</ul>
+<!-- 导航end -->
+<div class="itemAdd">
+    <div class="title">添加栏目</div>
+    <form action="/admin/itmeInsert" method="post" enctype="multipart/form-data">
+      <div class="input-group">
+        <span class="input-group-addon">栏目名称</span>
+        <input type="text" class="form-control" name="name">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">栏目描述</span>
+        <input type="text" class="form-control" name="info">
+      </div>
+
+      <div class="input-group">
+          <span class="input-group-addon">栏目排序</span>
+          <input type="text" class="form-control" name="order">
+        </div>
+
+      <div class="input-group submit">
+        <input type="submit" value="提交">
+      </div>
+
+    </form> 
+
+	</div>
+
+<%include footer%>

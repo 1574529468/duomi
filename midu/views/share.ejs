@@ -1,0 +1,55 @@
+<%include header%>
+<article>
+  <h1 class="t_nav"><a href="/" class="n1">首页</a><a href="/share" class="n2">列表</a></h1>
+  <div class="picbox">
+       
+    <ul style="width:96%;">
+            <% items.forEach(function(item){ %>
+        <h1 style="margin-left:20px;"> <%=item.name%></h1>
+      <li><a href="/"><i></i>
+        <div class="picinfo">
+            <% item.articles.forEach(function(val){  %>
+          <h3 style="text-overflow: ellipsis;  overflow: hidden; ">
+            <a href="/info/<%=val._id%>">
+            <%=val.title%>  ---  <%=val.author %>&nbsp; &nabla;&nabla;&nabla;&nbsp; 描述：<%=val.description %>
+            </a>
+          </h3>
+          <% }) %>
+        </a></li> 
+        <% }) %>
+    </ul>
+   
+    <div class="blank"></div>
+    <div class="pagelist"><a title="Total record">&nbsp;<b>45</b> </a>&nbsp;&nbsp;&nbsp;<b>1</b>&nbsp;<a href="/download/index_2.html">2</a>&nbsp;<a href="/download/index_2.html">��һҳ</a>&nbsp;<a href="/download/index_2.html">βҳ</a></div>
+  </div>
+  <div class="sidebar">
+   <div class="search">
+      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="" style="color: rgb(153, 153, 153);" onfocus="if(value==''){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='������ؼ���'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    
+    <div class="paihang">
+      <h2 class="hometitle">热门推荐</h2>
+      <ul>
+            <% datal.forEach(function(tuijian){ %>
+        <li>
+          <p><i><img src="/<%=tuijian.imgurl%>"></i>
+            <b><a href="/info/<%=tuijian._id%>" target="_blank"><%=tuijian.title%></a></b><%=tuijian.author%></p>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+   
+  </div>
+</article>
+<footer>
+  <p>Design by <a href="/">Copyright Statement: Adaptation by Guo Yuxue on March 23, 2019</a></p>
+</footer>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%include header%>
+<ul class="breadcrumb">
+    <li><a href="/admin/index">米读后台</a></li>
+    <li><a href="#">友情链接管理</a></li>
+    <li class="active">友情列表</li>
+</ul>
+
+<div class="itemAdd">
+    <div class="title">友情链接列表</div>
+    <table class="table"  style="text-align: center;">
+        <thead>
+            <tr>
+                <td>友情名称</td>
+                <td>友情地址</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <%datas.forEach(function(item){%>
+            <tr>
+                <td><%=item.name%></td>
+                <td><%=item.yurl%></td>
+                <td>
+                    <a href="/admin/linkEdit/<%=item._id%>">编辑</a>
+                    <a href="/admin/linkRemove/<%=item._id%>" onclick="return confirm('您确定要删除吗？')">删除</a>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+</div>
+<%include footer%>
